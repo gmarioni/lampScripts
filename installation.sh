@@ -89,6 +89,11 @@ sudo service apache2 restart
 #container. this way when i go to that IP on my lan i do <ip-address>:20801. so that way it works on trueNAS
 #problem is going in and enabling apache and mariadb...maybe have that part of the docker-compose yaml file??
 #it's another todo for another day
+#oh and the passwords/database name wordpress asks for are
+#database: wordpress_db
+#user: wordpress_user
+#pw: thepassword (might be just password)
+#again, make sure apache and mariadb are on and...there might be something i'm missing but oh well i'm tired.
 #once you run it you have to attach to it and run this:
 #service apache2 start
 #service mariadb start
