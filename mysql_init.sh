@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mysql_secure_installation <<EOF
+sudo mysql_secure_installation <<EOF
 
 y
 secret
