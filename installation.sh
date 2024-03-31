@@ -3,6 +3,9 @@
 sudo apt update
 sudo apt upgrade -yq
 sudo apt install unzip -yq
+sudo apt install curl -yq
+sudo apt install -y pkg-config build-essential autoconf bison re2c
+sudo apt install -y libxml2-dev libsqlite3-dev
 
 ########################################################################
 #TODO add in an automation that will pull any other scripts into       #
@@ -20,11 +23,11 @@ sudo systemctl start apache2
 # Install MySQL
 sudo apt install mysql-server -yq
 # need sql configure script that includes secure installation
-# install PHP and php-fpm
-sudo apt install php8.1 -yq
-sudo apt install libapache2-mod-php php8.1-fpm -yq
-# install php-mysql extension
-sudo apt install php-mysql -yq
+# install PHP and php-fpm NOTE php has to be downloaded manually and compiled to use the latest version
+curl -O https://www.php.net/distributions/php-8.3.4.tar.gz
+tar -xf php-8.3.4.tar.gz
+# install php-mysql extension, that might be for php8.1, see if can find one for php8.3
+# sudo apt install php-mysql -yq
 #after installation php needs these two commands to be run
 sudo a2enmod proxy_fcgi setenvif
 sudo a2enconf php8.1-fpm
